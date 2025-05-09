@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1018697428469",
+    "project_id": "e-commerce-mvvm-3b2cc",
+    "storage_bucket": "e-commerce-mvvm-3b2cc.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1018697428469:android:0ffdecccd7d73e075204bc",
+        "android_client_info": {
+          "package_name": "com.example.e_commerce_mvvm"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAD45ng95RRCpZ1sVBk9mURqJg2Yh8scNU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
