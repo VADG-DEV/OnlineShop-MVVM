@@ -6,9 +6,11 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.e_commerce_mvvm.Adapter.CategoryAdapter
+import com.example.e_commerce_mvvm.Adapter.PopularAdapter
 import com.example.e_commerce_mvvm.R
 import com.example.e_commerce_mvvm.ViewModel.MainViewModel
 import com.example.e_commerce_mvvm.databinding.ActivityMainBinding
@@ -24,6 +26,17 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         initBanner()
         initCategory()
+        initPopular()
+    }
+
+    private fun initPopular() {
+        binding.progressBarPopular.visibility = View.VISIBLE
+        viewModel.loadPopular().observeForever {
+            binding.recyclerViewPopular.layoutManager = GridLayoutManager(this, 2)
+            binding.recyclerViewPopular.adapter = PopularAdapter(it)
+            binding.progressBarPopular.visibility = View.GONE
+        }
+        viewModel.loadPopular()
     }
 
     private fun initCategory() {
